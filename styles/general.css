@@ -1,6 +1,9 @@
 body{
+font-family: Montserrat,sans-serif;
 width: 1440px;
-height: 2799px;
-
+height: 2800px;
 background: linear-gradient(348.75deg, #1A1A1A 68.45%, #0B2726 97.83%);
+}
+button{
+  font-family: Montserrat,sans-serif;
 }
