@@ -1,12 +1,21 @@
 /* Main Content CSS */
 #main-content {
 }
+
 /* General CSS */
 body {
   background: linear-gradient(351.22deg, #1a1a1a 55.25%, #2b2b2b 96.61%);
   min-height: 200svh;
   margin: 0;
   font-family: Montserrat, sans-serif;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
 }
 button {
   font-family: Montserrat, sans-serif;
@@ -14,4 +23,5 @@ button {
 :root {
   --color-orange: #ff5c00;
   --color-black: #1d1d1d;
+  --color-white: #fafafa;
 }
