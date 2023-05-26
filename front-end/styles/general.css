@@ -1,9 +1,17 @@
-body{
-font-family: Montserrat,sans-serif;
-width: 1440px;
-height: 2800px;
-background: linear-gradient(348.75deg, #1A1A1A 68.45%, #0B2726 97.83%);
+/* Main Content CSS */
+#main-content {
 }
-button{
-  font-family: Montserrat,sans-serif;
+/* General CSS */
+body {
+  background: linear-gradient(351.22deg, #1a1a1a 55.25%, #2b2b2b 96.61%);
+  min-height: 200svh;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+button {
+  font-family: Montserrat, sans-serif;
+}
+:root {
+  --color-orange: #ff5c00;
+  --color-black: #1d1d1d;
 }
