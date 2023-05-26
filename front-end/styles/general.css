@@ -1,6 +1,67 @@
 /* Main Content CSS */
 #main-content {
 }
+.section-title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--color-orange);
+}
+
+/* Spring Section CSS */
+#section-spring-releases {
+  padding: 3rem 0 0 4rem;
+  overflow-x: hidden;
+}
+.spring-game-carousel {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 0 0 0;
+  margin: 0;
+}
+.spring-card {
+  display: flex;
+  background: rgba(111, 111, 111, 0.18);
+  border-radius: 10px;
+  width: 25%;
+  min-width: 350px;
+  max-width: 350px;
+  max-height: 460px;
+  padding: 1rem;
+  gap: 1rem;
+}
+.spring-game-info {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.spring-game-combinedinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.spring-game-studio,
+.spring-game-release {
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--color-gray);
+}
+.spring-game-title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--color-white);
+}
+.spring-game-img {
+  width: 45%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+
+  border-radius: 10px;
+  max-width: 164px;
+  max-height: 200px;
+}
 
 /* General CSS */
 body {
@@ -24,4 +85,5 @@ button {
   --color-orange: #ff5c00;
   --color-black: #1d1d1d;
   --color-white: #fafafa;
+  --color-gray: #8c8c8c;
 }
