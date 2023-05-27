@@ -40,6 +40,8 @@
   font-size: 1.25rem;
   color: var(--color-white);
   padding: 0.5rem 2rem 0.5rem 2rem;
+  box-sizing: border-box;
+  width: 150px;
 
   transition: 0.15s;
   background-color: transparent;
