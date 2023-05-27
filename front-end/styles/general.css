@@ -17,6 +17,7 @@
   height: 40px;
   width: 40px;
   justify-content: center;
+  cursor: pointer;
 }
 
 .arrow-button--right {
@@ -26,6 +27,7 @@
 }
 
 .arrow-button--left {
+  display: none;
   left: 3%;
   top: 60%;
   padding: 14px 0 0 4px;
@@ -60,6 +62,7 @@
   padding: 2rem 0 0 0;
   margin: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .spring-card {
   display: flex;
@@ -107,11 +110,15 @@
 }
 
 /* General CSS */
+.is-hidden {
+  display: none;
+}
 body {
   background: linear-gradient(351.22deg, #1a1a1a 55.25%, #2b2b2b 96.61%);
   min-height: 200svh;
   margin: 0;
   font-family: Montserrat, sans-serif;
+  scroll-behavior: smooth;
 
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
