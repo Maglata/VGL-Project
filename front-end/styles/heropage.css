@@ -25,7 +25,7 @@
   gap: 4rem;
 }
 
-#section-hero .section-hero-title {
+.section-hero-title {
   color: var(--color-white);
   max-width: 750px;
   font-weight: 600;
@@ -35,7 +35,7 @@
   text-transform: uppercase;
 }
 
-#section-hero .section-hero-buttons {
+.section-hero-buttons {
   display: flex;
   gap: 2.25rem;
 }
@@ -159,8 +159,30 @@
   font-size: 1.57rem;
   font-weight: 500;
 }
+/* Become Part Section */
+#section-become-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  min-height: 100svh;
+}
 /* General */
-
+.becomepart-background-overlay {
+  background: linear-gradient(
+    180deg,
+    #1d1d1f 0.05%,
+    rgba(29, 29, 31, 0.3) 49.51%,
+    #1d1d1f 100%
+  );
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  z-index: -999;
+}
 /* Media Query this should be changed to 100% */
 .width-max {
   max-width: 25%;
