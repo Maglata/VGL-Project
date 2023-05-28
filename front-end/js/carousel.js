@@ -1,33 +1,33 @@
 // Combination Carousel
-// Spring 2023 Carousel 
-const springcarousel = document.querySelector(".spring-game-carousel");
-const springcards = springcarousel.querySelectorAll("li");
-const arrowright = document.querySelector(".arrow-button--right")
-const arrowleft = document.querySelector(".arrow-button--left")
-const cardWidth = springcards[0].offsetWidth;
-let springcarouselScrollPos = springcarousel.scrollLeft;
+const sections = document.querySelectorAll("section");
 
-arrowright.addEventListener("click", () => {
-  move(springcarousel,springcarousel.clientWidth);
-  checkScrollLimits(springcarousel, arrowleft, arrowright);
-});
+sections.forEach(section =>{
+  const carousel = section.querySelector("ul");
+  const cards = carousel.querySelectorAll("li");
+  const arrowright = section.querySelector(".arrow-button--right")
+  const arrowleft = section.querySelector(".arrow-button--left")
+  let carouselScrollPos = carousel.scrollLeft;
 
-arrowleft.addEventListener("click", () => {
-  move(springcarousel,-springcarousel.clientWidth);
-  checkScrollLimits(springcarousel, arrowleft, arrowright);
-});
+  arrowright.addEventListener("click", () => {
+    carouselScrollPos = move(carousel,carousel.clientWidth);
+    checkScrollLimits(carousel, arrowleft, arrowright,carouselScrollPos);
+  });
+  
+  arrowleft.addEventListener("click", () => {
+    carouselScrollPos = move(carousel,-carousel.clientWidth);
+    checkScrollLimits(carousel, arrowleft, arrowright,carouselScrollPos);
+  });
+})
 
 // Carousel Scrolling
 function move(carousel, amount) {
   carousel.scrollLeft += amount;
-  springcarouselScrollPos = carousel.scrollLeft += amount;
+  return carousel.scrollLeft += amount;
 }
 
 // Scroll Checking
-function checkScrollLimits(carousel, leftArrow, rightArrow) {
+function checkScrollLimits(carousel, leftArrow, rightArrow, scrollLeftPos) {
   const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-
-  const scrollLeftPos = springcarouselScrollPos;
 
   if (scrollLeftPos <= 0) {
     leftArrow.style.display = "none";
