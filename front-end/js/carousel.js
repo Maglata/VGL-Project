@@ -8,6 +8,7 @@ sections.forEach(section =>{
   const arrowleft = section.querySelector(".arrow-button--left")
   let carouselScrollPos = carousel.scrollLeft;
 
+  // Arrow Scrolling 
   arrowright.addEventListener("click", () => {
     carouselScrollPos = move(carousel,carousel.clientWidth);
     checkScrollLimits(carousel, arrowleft, arrowright,carouselScrollPos);
@@ -17,7 +18,9 @@ sections.forEach(section =>{
     checkScrollLimits(carousel, arrowleft, arrowright,carouselScrollPos);
   });
 
+  // Hover Animation for each card
   cards.forEach(card =>{
+
     card.addEventListener("mouseover", () => {
       card.style.transform = "scale(1.1)";
       card.style.transition = "0.3s ease";
