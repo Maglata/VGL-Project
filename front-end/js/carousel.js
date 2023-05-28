@@ -1,4 +1,4 @@
-
+// Combination Carousel
 // Spring 2023 Carousel 
 const springcarousel = document.querySelector(".spring-game-carousel");
 const springcards = springcarousel.querySelectorAll("li");
@@ -8,12 +8,12 @@ const cardWidth = springcards[0].offsetWidth;
 let springcarouselScrollPos = springcarousel.scrollLeft;
 
 arrowright.addEventListener("click", () => {
-  move(springcarousel,cardWidth);
+  move(springcarousel,springcarousel.clientWidth);
   checkScrollLimits(springcarousel, arrowleft, arrowright);
 });
 
 arrowleft.addEventListener("click", () => {
-  move(springcarousel,-cardWidth);
+  move(springcarousel,-springcarousel.clientWidth);
   checkScrollLimits(springcarousel, arrowleft, arrowright);
 });
 
