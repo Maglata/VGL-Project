@@ -52,7 +52,7 @@
 
 /* Spring Section CSS */
 #section-spring-releases {
-  padding: 3rem 0 0 4rem;
+  /* padding: 3rem 0 0 4rem; */
   position: relative;
 }
 .spring-game-carousel {
@@ -62,7 +62,7 @@
   gap: 3rem;
   padding: 2rem 0 0 0;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 .spring-game-carousel .card {
@@ -113,7 +113,7 @@
 }
 /* Popular Reviews Section */
 #section-reviews {
-  padding: 3rem 0 0 4rem;
+  /* padding: 3rem 0 0 4rem; */
   position: relative;
 }
 #section-reviews .arrow-button--left,
@@ -127,7 +127,7 @@
   gap: 3rem;
   padding: 2rem 0 0 0;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 .reviews-carousel .card {
@@ -174,7 +174,7 @@
 }
 /* Top 10 Section */
 #section-top-recommendations {
-  padding: 3rem 0 0 4rem;
+  /* padding: 3rem 0 0 4rem; */
   position: relative;
 }
 #section-top-recommendations .arrow-button--left,
@@ -189,10 +189,10 @@
   gap: 3rem;
   padding: 2rem 0 0 0;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   scroll-behavior: smooth;
 }
-.top-games-carousel .card {
+.top-games-carousel .card-info {
   display: flex;
 }
 .top-games-carousel .top-number {
@@ -205,7 +205,7 @@
   color: #ff5c00;
   font-size: 2.5rem;
 }
-.top-games-carousel .card-info {
+.top-games-carousel .card {
   position: relative;
   display: flex;
   background: rgba(111, 111, 111, 0.18);
@@ -259,12 +259,22 @@
 .is-hidden {
   display: none;
 }
+.page-padding--left--top {
+  padding: 3rem 0 0 4rem;
+}
+.page-padding--left--top--bot {
+  padding: 3rem 0 3rem 4rem;
+}
+.page-padding--left {
+  padding-left: 4rem;
+}
 body {
   background: linear-gradient(351.22deg, #1a1a1a 55.25%, #2b2b2b 96.61%);
   min-height: 200svh;
   margin: 0;
   font-family: Montserrat, sans-serif;
   scroll-behavior: smooth;
+  z-index: -10000;
 
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */

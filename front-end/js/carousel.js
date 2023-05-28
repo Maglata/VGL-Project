@@ -3,7 +3,7 @@ const sections = document.querySelectorAll("section");
 
 sections.forEach(section =>{
   const carousel = section.querySelector("ul");
-  const cards = carousel.querySelectorAll("li");
+  const cards = carousel.querySelectorAll(".card");
   const arrowright = section.querySelector(".arrow-button--right")
   const arrowleft = section.querySelector(".arrow-button--left")
   let carouselScrollPos = carousel.scrollLeft;
@@ -12,11 +12,21 @@ sections.forEach(section =>{
     carouselScrollPos = move(carousel,carousel.clientWidth);
     checkScrollLimits(carousel, arrowleft, arrowright,carouselScrollPos);
   });
-  
   arrowleft.addEventListener("click", () => {
     carouselScrollPos = move(carousel,-carousel.clientWidth);
     checkScrollLimits(carousel, arrowleft, arrowright,carouselScrollPos);
   });
+
+  cards.forEach(card =>{
+    card.addEventListener("mouseover", () => {
+      card.style.transform = "scale(1.1)";
+      card.style.transition = "0.3s ease";
+    });
+  
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "scale(1)";
+    });
+  })
 })
 
 // Carousel Scrolling
