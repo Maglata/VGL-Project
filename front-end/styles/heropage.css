@@ -159,6 +159,60 @@
   font-size: 1.57rem;
   font-weight: 500;
 }
+/* Reviews Section */
+#section-reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  min-height: 100svh;
+}
+.review-container {
+  display: flex;
+  width: 100%;
+  height: 40%;
+  justify-content: center;
+  gap: 4rem;
+}
+.review-card {
+  position: relative;
+  width: 20%;
+  max-width: 280px;
+  max-height: 350px;
+}
+.review-img {
+  width: 100%;
+  border-radius: 30px;
+  max-width: 280px;
+  max-height: 350px;
+}
+.review-card-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+  border-radius: 0 0 30px 30px;
+}
+.reviews-text {
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  text-transform: uppercase;
+
+  display: flex;
+  text-align: center;
+  align-items: center;
+
+  width: 20%;
+  max-width: 280px;
+}
 /* Become Part Section */
 #section-become-part {
   display: flex;
@@ -186,6 +240,16 @@
 /* Media Query this should be changed to 100% */
 .width-max {
   max-width: 25%;
+}
+/* Blurred Background Effect */
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 body {
   background: var(--color-blacker);
