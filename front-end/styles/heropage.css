@@ -152,7 +152,7 @@
   transition: width 0.3s ease; /* Apply the transition effect */
 }
 .learn-more-start:hover::after {
-  width: 100%; /* Expand the width of the underline on hover */
+  width: 85%; /* Expand the width of the underline on hover */
 }
 .learn-more-arrow {
   color: var(--color-orange);
