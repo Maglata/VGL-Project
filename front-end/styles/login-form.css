@@ -15,13 +15,15 @@
   width: 60%;
   height: 70%;
 }
+
 /* Login Form */
 .input-form {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 6rem 0 6rem 0;
+  /* justify-content: space-between; */
+  gap: 15%;
+  padding: 4.5rem 0 4.5rem 0;
   width: 50%;
   background-color: #2a2a2a;
   border-radius: 1rem 0px 0px 1rem;
@@ -33,6 +35,7 @@
   font-weight: 500;
   font-size: 2.5rem;
 }
+
 /* Login Inputs */
 .login-input-container,
 .login-button-container {
@@ -64,33 +67,102 @@
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.5);
 }
-/* Login Button */
+
+/* Forgot Password */
 .login-forgot {
+  position: relative;
   color: var(--color-white);
   font-size: 1rem;
   font-weight: 500;
   padding: 0 0 0.5rem 0;
   margin: 0;
+  cursor: pointer;
 }
+.login-forgot::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.3rem; /* Adjust the position of the underline */
+  width: 0;
+  height: 1px;
+  background-color: var(--color-white);
+  transition: width 0.3s ease; /* Apply the transition effect */
+}
+.login-forgot:hover::after {
+  width: 100%; /* Expand the width of the underline on hover */
+}
+
+/* Login Button */
 .login-button {
   color: var(--color-white);
   font-size: 1.25rem;
   font-weight: 500;
   width: 80%;
-  padding: 1rem 0 1rem 0;
+  padding: 0.9rem 0 1rem 0;
   max-height: 50px;
 
   background: linear-gradient(91.42deg, #ff5c00 27.79%, #ff9838 97.95%);
   border-radius: 10px;
   border: none;
+  transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+}
+.login-button:hover {
+  background: var(--color-white);
+  color: var(--color-orange);
+  cursor: pointer;
 }
 /* Unselected Part */
 .unselected-form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  padding: 4.5rem 0 4.5rem 0;
   width: 50%;
   background: linear-gradient(122.34deg, #ff5c00 -16.04%, #ff9838 100%);
   border-radius: 0px 1rem 1rem 0px;
 }
-
+.unselected-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 65%;
+}
+.unselected-text {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 3.125rem;
+  text-align: center;
+  margin: 0;
+}
+.unselected-details {
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem 0 0 0;
+}
+.unselected-button {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-weight: 500;
+  width: 80%;
+  padding: 0.7rem 0 1rem 0;
+  max-height: 50px;
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid var(--color-white);
+  transition: color 0.15s ease-in-out, background 0.15s ease-in-out;
+}
+.unselected-button:hover {
+  background: var(--color-white);
+  color: var(--color-orange);
+  cursor: pointer;
+}
 /* Exit Icon */
 .login-close {
   position: absolute;
@@ -98,6 +170,11 @@
   height: 24px;
   top: 24px;
   right: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+.login-close:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 /* Login Icons */
 .login-options {
@@ -109,6 +186,11 @@
 .login-option-icon {
   width: 38.75px;
   height: 38.75px;
+  transition: transform 0.3s ease-in-out;
+}
+.login-option-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 /* General CSS */
 .is-hidden {
