@@ -1,5 +1,5 @@
 .login-form-wrapper {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -56,6 +56,8 @@
   max-height: 50px;
   margin: 0.8rem 0 0 0;
   padding: 1rem 0 1rem 1rem;
+  color: var(--color-white);
+  font-size: 1rem;
 
   background: #515151;
   border: none;
@@ -66,6 +68,9 @@
   font-weight: 500;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.5);
+}
+.login-input:focus {
+  outline: 1px solid var(--color-white);
 }
 
 /* Forgot Password */
@@ -110,6 +115,15 @@
   background: var(--color-white);
   color: var(--color-orange);
   cursor: pointer;
+}
+.login-href {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-decoration: none;
+}
+.login,
+.sign-up {
 }
 /* Unselected Part */
 .unselected-form {
@@ -195,4 +209,7 @@
 /* General CSS */
 .is-hidden {
   display: none;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
