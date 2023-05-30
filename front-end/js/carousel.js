@@ -1,7 +1,10 @@
 // Combination Carousel
 const sections = document.querySelectorAll("section");
 
-sections.forEach(section =>{
+sections.forEach((section,index) =>{
+  if(index === 0){
+    return;
+  }
   const carousel = section.querySelector("ul");
   const cards = carousel.querySelectorAll(".card");
   const arrowright = section.querySelector(".arrow-button--right")
@@ -53,3 +56,13 @@ function checkScrollLimits(carousel, leftArrow, rightArrow, scrollLeftPos) {
     rightArrow.style.display = "none";
   }
 }
+
+// Most Played Games Interval
+let counter = 1;
+setInterval(function(){
+  document.getElementById('radio' + counter).checked = true;
+  counter++;
+  if(counter > 4){
+    counter = 1;
+  }
+}, 5000);

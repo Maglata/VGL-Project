@@ -49,7 +49,112 @@
 .arrow-left {
   transform: rotate(-45deg);
 }
-
+/* Most Played Games Section */
+#section-most-played {
+  position: relative;
+  padding: 0 0 3rem 4rem;
+}
+.slider {
+  width: 100%;
+  height: 100%;
+  max-width: 1280px;
+  max-height: 720px;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  width: 500%;
+  height: 100%;
+  max-height: 720px;
+}
+.slides input {
+  display: none;
+}
+.slide {
+  width: 20%;
+  transition: 2s;
+  cursor: pointer;
+}
+.slide-img {
+  width: 100%;
+  height: 100%;
+  max-width: 1280px;
+  max-height: 720px;
+  object-fit: contain;
+  border-radius: 30px;
+}
+.slider-container {
+  display: flex;
+  justify-content: center;
+}
+/* Manual Navigation */
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  max-width: 1280px;
+  margin: 2rem 0 0 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.manual-btn {
+  background-color: rgba(217, 217, 217, 0.3);
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+.manual-btn:hover {
+  background: #f48242;
+}
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+#radio5:checked ~ .first {
+  margin-left: -80%;
+}
+/* Auto Navigation */
+.navigation-auto {
+  position: absolute;
+  width: 100%;
+  max-width: 1280px;
+  bottom: 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.navigation-auto div {
+  background-color: rgba(217, 217, 217, 0.3);
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  transition: background 0.15s ease-in-out;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background-color: var(--color-orange);
+}
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background-color: var(--color-orange);
+}
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background-color: var(--color-orange);
+}
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background-color: var(--color-orange);
+}
+#radio5:checked ~ .navigation-auto .auto-btn5 {
+  background-color: var(--color-orange);
+}
 /* Spring Section CSS */
 #section-spring-releases {
   /* padding: 3rem 0 0 4rem; */
@@ -264,6 +369,9 @@
 }
 .page-padding--left--top--bot {
   padding: 3rem 0 3rem 4rem;
+}
+.page-padding--top--bot {
+  padding: 3rem 0 3rem 0;
 }
 .page-padding--left {
   padding-left: 4rem;
