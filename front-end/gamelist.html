@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Game List</title>
+
+    <link rel="stylesheet" href="styles/profile-header.css" />
+    <link rel="stylesheet" href="styles/sidenav.css" />
+
+    <link sizes="32x32" rel="icon" href="imgs/misc/web-logo.png" />
+
+    <script defer src="js/sidenav.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Profile Header -->
+    <header class="profile-header">
+      <!-- Search -->
+      <input
+        class="search-field"
+        type="search"
+        required
+        placeholder="&#x1F50E;&#xFE0E; Search"
+      />
+      <div class="right-section">
+        <!-- Games List -->
+        <div class="profile-header-icon-container game-list">
+          <a href="gamelist.html">
+            <img
+              class="profile-header-icon"
+              src="imgs/misc/list-icon.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- Notifications -->
+        <div class="profile-header-icon-container">
+          <img
+            class="profile-header-icon"
+            src="imgs/misc/notif-icon.png"
+            alt=""
+          />
+        </div>
+        <!-- Pfp -->
+        <div class="profile-header-icon-container">
+          <img class="profile-header-icon" src="imgs/misc/pfp.png" alt="" />
+        </div>
+      </div>
+    </header>
+    <!-- Side Navbar -->
+    <nav class="navbar">
+      <ul class="navbar-nav">
+        <!-- Logo -->
+        <li class="nav-item logo">
+          <a href="heropage.html">
+            <img class="navbar-icon" src="imgs/misc/logo.png" alt="" />
+          </a>
+        </li>
+        <!-- Games -->
+        <li class="nav-item">
+          <a href="profile.html">
+            <img class="navbar-icon" src="imgs/misc/navbar-games.png" alt="" />
+          </a>
+        </li>
+        <!-- Reviews -->
+        <li class="nav-item">
+          <a href="reviews.html">
+            <img
+              class="navbar-icon"
+              src="imgs/misc/navbar-reviews.png"
+              alt=""
+            />
+          </a>
+        </li>
+        <!-- News -->
+        <li class="nav-item">
+          <a href="news.html">
+            <img class="navbar-icon" src="imgs/misc/navbar-news.png" alt="" />
+          </a>
+        </li>
+        <!-- Navbar color -->
+        <div class="navbar-height"></div>
+      </ul>
+    </nav>
+    <main id="main-content"></main>
+  </body>
+</html>

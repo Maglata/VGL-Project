@@ -22,14 +22,14 @@
 
 .arrow-button--right {
   right: 3%;
-  top: 60%;
+  top: 55%;
   padding: 14px 4px 0 0;
 }
 
 .arrow-button--left {
   display: none;
   left: 5%;
-  top: 60%;
+  top: 55%;
   padding: 14px 0 0 4px;
 }
 
@@ -118,7 +118,7 @@
 }
 #section-reviews .arrow-button--left,
 #section-reviews .arrow-button--right {
-  top: 55%;
+  top: 45%;
 }
 .reviews-carousel {
   position: relative;
@@ -179,7 +179,7 @@
 }
 #section-top-recommendations .arrow-button--left,
 #section-top-recommendations .arrow-button--right {
-  top: 55.5%;
+  top: 49.5%;
 }
 .top-games-carousel {
   position: relative;
