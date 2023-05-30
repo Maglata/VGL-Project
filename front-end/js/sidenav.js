@@ -10,8 +10,8 @@ navli.push(document.querySelector(".profile-header").querySelector(".game-list")
 
 // Check for an active page in the sidenav and game list icon
 navli.forEach(li => {
-  lia = li.querySelector("a")
-  if(lia.pathname === activePage){
+  li_a = li.querySelector("a")
+  if(li_a.pathname === activePage){
     li.classList.add("selected-icon");
     handleNavbar(navbar);
     return;
@@ -19,11 +19,6 @@ navli.forEach(li => {
 })
 
 function handleNavbar(Navbar) {
-
-  // Remove previously applied CSS classes from navbar items
-  const navbarItems = document.querySelectorAll('.nav-item');
-  navbarItems.forEach(item => item.classList.remove('previous-item', 'next-item'));
-
   // Find the li element with the "selected-icon" class
   const selectedItem = Navbar.getElementsByClassName("selected-icon")[0];
 
