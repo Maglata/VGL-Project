@@ -2,14 +2,23 @@
 const navbar = document.querySelector('.navbar');
 
 const activePage = window.location.pathname
-console.log(activePage)
-const navlinks = document.querySelectorAll("nav a");
+const navli = [...document.querySelectorAll("nav li")];
 
-handleNavbar(navbar);
+// Adding Games List Icon
+navli.push(document.querySelector(".profile-header").querySelector(".game-list"));
+
+
+// Check for an active page in the sidenav and game list icon
+navli.forEach(li => {
+  lia = li.querySelector("a")
+  if(lia.pathname === activePage){
+    li.classList.add("selected-icon");
+    handleNavbar(navbar);
+    return;
+  }
+})
 
 function handleNavbar(Navbar) {
-
-
 
   // Remove previously applied CSS classes from navbar items
   const navbarItems = document.querySelectorAll('.nav-item');
