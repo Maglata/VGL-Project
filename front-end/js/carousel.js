@@ -1,10 +1,17 @@
 // Combination Carousel
 const sections = document.querySelectorAll("section");
 
+const modal = document.getElementById("game-modal");
+
 sections.forEach((section,index) =>{
 
   // Skipping the first Carousel for Most Played
   if(index === 0){
+    const cards = section.getElementsByClassName("slide");
+    console.log(cards);
+    for (let index = 0; index < cards.length; index++) {
+      showModal(cards[index]);
+    }
     return;
   }
   const carousel = section.querySelector("ul");
@@ -89,6 +96,10 @@ sections.forEach((section,index) =>{
 
 })
 
+function showModal(card) {
+  console.log(card);
+}
+
 // Function to add the mask effect
 function addMask(card) {
   const maskElement = card.querySelector('.card-mask');
@@ -132,3 +143,16 @@ setInterval(function(){
     counter = 1;
   }
 }, 5000);
+
+
+// Game Testing for Modal
+fetch('json/gameinfo.json')
+  .then(response => response.json())
+  .then(data => {
+    const gameinfo = data;
+    gameinfo.forEach(game => {
+      console.log(game);    
+    })
+  })
+
+

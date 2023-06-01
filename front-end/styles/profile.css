@@ -93,7 +93,8 @@
   text-transform: uppercase;
 }
 .slide-dev {
-  color: var(--color-gray);
+  /* color: var(--color-gray); */
+  color: var(--color-white);
 
   font-weight: 400;
   font-size: 1rem;
@@ -206,7 +207,8 @@
   overflow: hidden;
   scroll-behavior: smooth;
 }
-.spring-game-carousel .card {
+.spring-game-carousel .card,
+.modal-more-cards .card {
   position: relative;
   display: flex;
   background: rgba(111, 111, 111, 0.18);
@@ -219,30 +221,36 @@
   gap: 1rem;
   cursor: pointer;
 }
-.spring-game-carousel .card-game-info {
+.spring-game-carousel .card-game-info,
+.modal-more-cards .card-game-info {
   width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-top: 0.4rem;
 }
-.spring-game-carousel .card-game-combinedinfo {
+.spring-game-carousel .card-game-combinedinfo,
+.modal-more-cards .card-game-combinedinfo {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 .spring-game-carousel .card-game-studio,
-.spring-game-carousel .card-game-release {
+.spring-game-carousel .card-game-release,
+.modal-more-cards .card-game-studio,
+.modal-more-cards .card-game-release {
   font-weight: 300;
   font-size: 1rem;
   color: var(--color-gray);
 }
-.spring-game-carousel .card-game-title {
+.spring-game-carousel .card-game-title,
+.modal-more-cards .card-game-title {
   font-weight: 500;
   font-size: 1.25rem;
   color: var(--color-white);
 }
-.spring-game-carousel .card-game-img {
+.spring-game-carousel .card-game-img,
+.modal-more-cards .card-game-img {
   width: 45%;
   height: 100%;
   object-fit: cover;
@@ -392,6 +400,203 @@
   border-radius: 10px;
   max-width: 164px;
   max-height: 200px;
+}
+/* Card Modal */
+.card-modal {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--color-black);
+  width: 75%;
+  height: 200%;
+}
+.modal-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.modal-exit {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.modal-exit:hover {
+  transform: scale(1.2);
+}
+.modal-img-container {
+  position: relative;
+  width: 100%;
+  height: 35%;
+}
+.modal-img-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #1d1d1f 100%);
+}
+.modal-main-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding: 0 5rem 0 5rem;
+}
+.name-icon-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.modal-name {
+  color: var(--color-white);
+
+  font-weight: 600;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.modal-icon {
+  max-width: 36px;
+  max-height: 36px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.modal-icon:hover {
+  transform: scale(1.2);
+}
+.release-rating-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.modal-release {
+  color: var(--color-gray);
+
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+.modal-rating {
+  color: var(--color-white);
+  font-weight: 300;
+  font-size: 1.25rem;
+
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--color-gray);
+}
+.modal-genre-container {
+  display: flex;
+  align-items: center;
+}
+.modal-genre-text {
+  color: var(--color-gray);
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+.game-genre {
+  color: var(--color-white);
+}
+.modal-desc {
+  color: var(--color-white);
+
+  font-weight: 400;
+  font-size: 1.5rem;
+
+  padding: 0 5rem 0 5rem;
+}
+.modal-reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  padding: 0 5rem 0 5rem;
+}
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.modal-title {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 2rem;
+}
+.modal-see-more {
+  position: relative;
+  display: flex;
+  color: var(--color-gray);
+  align-items: center;
+
+  font-weight: 300;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.modal-see-more::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-white);
+  transition: width 0.3s ease;
+}
+.modal-see-more:hover::after {
+  width: 100%;
+}
+.modal-reviews {
+  display: flex;
+  width: 100%;
+  gap: 10%;
+}
+.modal-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+.modal-reviewer-pfp {
+  width: 100%;
+  height: 100%;
+  max-height: 63px;
+  max-width: 63px;
+}
+.modal-reviewer-name {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1rem;
+}
+.modal-reviewer-rating {
+  display: flex;
+  padding: 1rem 0 0 0;
+  gap: 0.6rem;
+}
+.modal-reviewer-comment {
+  display: flex;
+  padding: 2rem 0 0 0;
+  color: var(--color-white);
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.25rem;
+  width: 50%;
+  line-height: 1.25rem;
+}
+.reviewer-ticks {
+  font-size: 3rem;
+}
+.modal-more-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  padding: 0 5rem 0 5rem;
+}
+.modal-more-cards {
+  display: flex;
+  width: 100%;
+  gap: 10%;
 }
 /* Card Masking */
 .card-mask {
