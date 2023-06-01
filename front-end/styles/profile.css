@@ -260,6 +260,12 @@
   max-width: 164px;
   max-height: 200px;
 }
+.modal-more-cards .card {
+  transition: transform 0.3s ease-in-out;
+}
+.modal-more-cards .card:hover {
+  transform: scale(1.15);
+}
 /* Popular Reviews Section */
 #section-reviews {
   /* padding: 3rem 0 0 4rem; */
@@ -405,11 +411,13 @@
 .card-modal {
   z-index: 1;
   position: absolute;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 3rem;
+  top: 0;
+  right: 5%;
   background-color: var(--color-black);
-  width: 75%;
+  width: 85%;
   height: 200%;
 }
 .modal-img {
@@ -597,6 +605,7 @@
   display: flex;
   width: 100%;
   gap: 10%;
+  justify-content: center;
 }
 /* Card Masking */
 .card-mask {
@@ -688,6 +697,9 @@
 }
 .page-padding--left {
   padding-left: 4rem;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 body {
   background: linear-gradient(351.22deg, #1a1a1a 55.25%, #2b2b2b 96.61%);

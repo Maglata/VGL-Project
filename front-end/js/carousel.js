@@ -2,7 +2,7 @@
 const sections = document.querySelectorAll("section");
 
 const modal = document.getElementById("game-modal");
-
+const maincontent = document.getElementById("main-content");
 sections.forEach((section,index) =>{
 
   // Skipping the first Carousel for Most Played
@@ -10,7 +10,10 @@ sections.forEach((section,index) =>{
     const cards = section.getElementsByClassName("slide");
     console.log(cards);
     for (let index = 0; index < cards.length; index++) {
-      showModal(cards[index]);
+      cards[index].addEventListener("click",() =>{
+        showModal(cards[index])
+        document.getElementsByTagName("body")[0].classList.add("overflow-hidden");
+      })
     }
     return;
   }
@@ -98,6 +101,7 @@ sections.forEach((section,index) =>{
 
 function showModal(card) {
   console.log(card);
+  modal.style.display = "flex";
 }
 
 // Function to add the mask effect
@@ -144,6 +148,10 @@ setInterval(function(){
   }
 }, 5000);
 
+// Screen Adjustment
+window.addEventListener('scroll', function() {
+  modal.style.top = window.pageYOffset + 'px';
+});
 
 // Game Testing for Modal
 fetch('json/gameinfo.json')
