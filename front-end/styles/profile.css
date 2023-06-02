@@ -408,18 +408,35 @@
   max-height: 200px;
 }
 /* Card Modal */
-.card-modal {
-  z-index: 1;
+.modal-container {
   position: absolute;
   display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: rgba(29, 29, 31, 0.7);
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.modal-container ::-webkit-scrollbar {
+  display: none;
+}
+.card-modal {
+  z-index: 1;
+  overflow-y: scroll;
+  display: flex;
   flex-direction: column;
   gap: 3rem;
-  top: 0;
-  right: 5%;
   background-color: var(--color-black);
-  width: 85%;
-  height: 200%;
+  width: 95%;
+  height: 100%;
 }
+
 .modal-img {
   position: absolute;
   width: 100%;
@@ -441,6 +458,7 @@
   position: relative;
   width: 100%;
   height: 35%;
+  min-height: 720px;
 }
 .modal-img-overlay {
   position: absolute;
@@ -590,6 +608,7 @@
   font-size: 1.25rem;
   width: 50%;
   line-height: 1.25rem;
+  justify-content: center;
 }
 .reviewer-ticks {
   font-size: 3rem;
@@ -599,7 +618,7 @@
   flex-direction: column;
   gap: 5rem;
   align-items: center;
-  padding: 0 5rem 0 5rem;
+  padding: 0 5rem 3rem 5rem;
 }
 .modal-more-cards {
   display: flex;

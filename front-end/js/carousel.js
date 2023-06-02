@@ -1,20 +1,28 @@
 // Combination Carousel
 const sections = document.querySelectorAll("section");
-
-const modal = document.getElementById("game-modal");
+let modalcontainer = document.getElementsByClassName("modal-container");
+modalcontainer = modalcontainer[0]
+const modal = modalcontainer.querySelector("#game-modal");
 const maincontent = document.getElementById("main-content");
 sections.forEach((section,index) =>{
 
   // Skipping the first Carousel for Most Played
   if(index === 0){
     const cards = section.getElementsByClassName("slide");
-    console.log(cards);
+    // Exit Icon Event
+    modal.getElementsByClassName("modal-exit")[0].addEventListener("click", () =>{
+      document.getElementsByTagName("body")[0].classList.remove("overflow-hidden");
+      modalcontainer.style.display = "none";
+    })
+
+    // Card Cycling
     for (let index = 0; index < cards.length; index++) {
       cards[index].addEventListener("click",() =>{
-        showModal(cards[index])
-        document.getElementsByTagName("body")[0].classList.add("overflow-hidden");
+        showModal(cards[index], index)
+        modal.style.top = window.pageYOffset + 30 + 'px';
       })
     }
+
     return;
   }
   const carousel = section.querySelector("ul");
@@ -99,9 +107,52 @@ sections.forEach((section,index) =>{
 
 })
 
-function showModal(card) {
-  console.log(card);
-  modal.style.display = "flex";
+let gameinfo;
+// JSON info fetching
+fetch('json/gameinfo.json')
+  .then(response => response.json())
+  .then(data => {
+    gameinfo = data;
+  })
+
+// Modal Changing
+function showModal(card, index) {
+  let gamedata = gameinfo[index]
+
+  // Img Change
+  modal.getElementsByClassName("modal-img")[0].src = gamedata.gameImg;
+
+  // Entry Info Container
+  let maincontainer = modal.getElementsByClassName("modal-main-container")[0]
+
+  // Name Change
+  maincontainer.getElementsByClassName("modal-name")[0].innerHTML = gamedata.gameName;
+
+  // Release Change
+  maincontainer.getElementsByClassName("modal-release")[0].innerHTML = gamedata.releaseDate;
+
+  // Rating Change
+  maincontainer.getElementsByClassName("modal-rating")[0].innerHTML = gamedata.gameRating;
+
+  // Genre Changing
+  maincontainer.getElementsByClassName("game-genre")[0].innerHTML = gamedata.gameGenre;
+
+  // Desc Info Container
+  modal.getElementsByClassName("modal-desc")[0].innerHTML = gamedata.gameDesc;
+
+  // Reviews Container
+  maincontainer = modal.getElementsByClassName("modal-reviews-container")[0].getElementsByClassName("modal-reviews")[0].getElementsByClassName("modal-review");
+
+  // Review Changing
+  for (let index = 0; index < maincontainer.length; index++) {
+    console.log(gamedata.reviews[index])
+    maincontainer[index].getElementsByClassName("modal-reviewer-comment")[0].innerHTML = gamedata.reviews[index];
+  }
+
+
+  // Final Code
+  document.getElementsByTagName("body")[0].classList.add("overflow-hidden");
+  modalcontainer.style.display = "flex";
 }
 
 // Function to add the mask effect
@@ -147,20 +198,5 @@ setInterval(function(){
     counter = 1;
   }
 }, 5000);
-
-// Screen Adjustment
-window.addEventListener('scroll', function() {
-  modal.style.top = window.pageYOffset + 'px';
-});
-
-// Game Testing for Modal
-fetch('json/gameinfo.json')
-  .then(response => response.json())
-  .then(data => {
-    const gameinfo = data;
-    gameinfo.forEach(game => {
-      console.log(game);    
-    })
-  })
 
 

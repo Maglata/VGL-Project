@@ -1,5 +1,6 @@
 [
   {
+    "gameImg" : "imgs/most-played/game1.jpg",
     "gameName" : "Hogwarts Legacy",
     "releaseDate" : "7 Feb 2023",
     "gameRating" : "T (Teen 13+)",
@@ -12,6 +13,7 @@
     ]
   },
   {
+    "gameImg" : "imgs/most-played/game2.jpg",
     "gameName" : "NieR: Automata",
     "releaseDate" : "23 Feb 2017",
     "gameRating" : "A (PEGI 18+)",
@@ -24,6 +26,7 @@
     ]
   },
   {
+    "gameImg" : "imgs/most-played/game3.jpg",
     "gameName": "Danganronpa V3",
     "releaseDate": "26 Jan 2017",
     "gameRating": "Mature (17+)",
@@ -36,6 +39,7 @@
     ]
   },
   {
+    "gameImg" : "imgs/most-played/game4.jpg",
     "gameName": "The Legend of Zelda: Breath of the Wild",
     "releaseDate": "3 Mar 2017",
     "gameRating": "Everyone 10+",
@@ -48,6 +52,7 @@
     ]
   },
   {
+    "gameImg" : "imgs/most-played/game5.jpg",
     "gameName": "Fire Emblem: Three Houses",
     "releaseDate": "26 Jul 2019",
     "gameRating": "Teen (13+)",
