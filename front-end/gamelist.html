@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="styles/profile-header.css" />
     <link rel="stylesheet" href="styles/sidenav.css" />
+    <link rel="stylesheet" href="styles/gamelist.css" />
 
     <link sizes="32x32" rel="icon" href="imgs/misc/web-logo.png" />
 
@@ -91,6 +92,49 @@
         <div class="navbar-height"></div>
       </ul>
     </nav>
-    <main id="main-content"></main>
+
+    <div class="gamelist-navbar">
+      <!-- Nav Options -->
+      <ul class="gamelist-nav">
+        <li class="gamelist-item active">Already Played</li>
+        <li class="gamelist-item">Favourite games</li>
+        <li class="gamelist-item">Cozy Games</li>
+        <li class="gamelist-item">To be played</li>
+      </ul>
+      <!-- Images -->
+      <div>
+        <img
+          class="gamelist-icon is-hidden"
+          src="imgs/misc/icon-nexxt-section.png"
+          alt="Next Section Button"
+        />
+        <img
+          class="gamelist-icon"
+          src="imgs/misc/icon-new-section.png"
+          alt="New List Button"
+        />
+      </div>
+    </div>
+    <main id="main-content">
+      <section id="section-already-played">
+        <!-- Opening Section -->
+        <div class="already-played-opening">
+          <img
+            class="already-played-img"
+            src="imgs/misc-games/already-opening.jpg"
+            alt="Opening Image"
+          />
+          <div class="opening-overlay"></div>
+          <!-- Section Text -->
+          <div class="section-opening-container">
+            <div class="section-title">Already Played</div>
+            <div class="section-update">
+              Last updated: <span class="section-date">7 May 2023</span>
+            </div>
+          </div>
+        </div>
+        <div class="already-played-main"></div>
+      </section>
+    </main>
   </body>
 </html>
