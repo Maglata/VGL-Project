@@ -10,7 +10,7 @@ sections.forEach((section,index) =>{
   if(index === 0){
     const cards = section.getElementsByClassName("slide");
     // Exit Icon Event
-    modal.getElementsByClassName("modal-exit")[0].addEventListener("click", () =>{
+      modal.getElementsByClassName("modal-exit")[0].addEventListener("click", () =>{
       document.getElementsByTagName("body")[0].classList.remove("overflow-hidden");
       modalcontainer.style.display = "none";
     })
@@ -19,7 +19,8 @@ sections.forEach((section,index) =>{
     for (let index = 0; index < cards.length; index++) {
       cards[index].addEventListener("click",() =>{
         showModal(cards[index], index)
-        modal.style.top = window.pageYOffset + 30 + 'px';
+        // modal.style.top = window.pageYOffset + 30 + 'px';
+        modalcontainer.style.top = window.pageYOffset + 'px';
       })
     }
 
