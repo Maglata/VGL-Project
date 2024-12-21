@@ -2,10 +2,12 @@
 import LatestReviewCard from "@/components/LatestReviewCard.vue";
 import SideNav from "@/components/SideNav.vue";
 import ProfileHeader from "@/components/ProfileHeader.vue";
+import AddReviewModal from "@/components/AddReviewModal.vue";
 import type { cardProps } from "@/components/LatestReviewCard.vue";
 import { computed, reactive, ref } from "vue";
 
 const filter = ref("");
+const showAddModal = ref(false);
 
 const reviewCards = reactive<cardProps[]>([
   {
@@ -34,6 +36,11 @@ const reviewCards = reactive<cardProps[]>([
   },
 ]);
 
+const addNewReview = (review: cardProps) => {
+  reviewCards.push(review);
+  showAddModal.value = false;
+};
+
 const deleteCard = (index: number) => {
   reviewCards.splice(index, 1);
 };
@@ -55,8 +62,14 @@ const filteredCards = computed(() => {
           filter = e;
         }
       "
-    ></ProfileHeader>
-    <SideNav></SideNav>
+      @add-card="showAddModal = true"
+    />
+    <SideNav />
+    <AddReviewModal
+      v-if="showAddModal"
+      @add-review="addNewReview"
+      @close="showAddModal = false"
+    />
     <section id="section-latest">
       <div class="section-title">Latest</div>
       <template v-for="(card, index) in reviewCards">

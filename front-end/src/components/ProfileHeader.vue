@@ -3,12 +3,8 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-defineProps(['filerValue']);
-const emit=defineEmits(['filterChanged']); 
-
-const goBack = () => {
-  router.push("/");
-};
+defineProps(["filerValue"]);
+const emit = defineEmits(["filterChanged", "addCard"]);
 </script>
 
 <template>
@@ -23,9 +19,8 @@ const goBack = () => {
     />
     <div class="right-section">
       <!-- Pfp -->
-      <div class="profile-header-icon-container" @click="goBack">
+      <div class="profile-header-icon-container" @click="emit('addCard')">
         <img class="profile-header-icon" src="/misc/pfp.png" alt="" />
-
       </div>
     </div>
   </header>
