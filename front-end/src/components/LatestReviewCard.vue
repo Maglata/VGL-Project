@@ -34,6 +34,7 @@
           class="latest-settings"
           src="/misc/icon-settings.png"
           alt="Settings"
+          @click="emit('deleteCard', {reviewerName:props.reviewerName, gameName:props.gameName})"
         />
       </div>
       <div class="review-info">
@@ -45,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
+export interface cardProps {
   iconsrc: string
   rating: number
   gameName: string
@@ -53,7 +54,8 @@ interface Props {
   reviewerName: string
   timeAgo: string
 }
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<cardProps>(), {
   rating: 5
 })
+const emit=defineEmits(['deleteCard']);
 </script>
